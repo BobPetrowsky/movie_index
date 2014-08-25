@@ -1,0 +1,22 @@
+<div class="movie_list">
+  <ul>
+
+    <% @movies.each do |movie| %>
+
+      <li>
+        <a href="<%= "/movies/#{movie[:id]}" %>">
+          <span>Movie:</span> <%= movie[:title] %>
+          <span>Studio:</span> <%= movie[:studio] %>
+        </a>
+      </li>
+
+    <% end %>
+
+  </ul>
+  <% if !on_first_page?(@page_num) %>
+    <a href="/movies?page=<%= @page_num - 1 %>">Previous</a>
+  <% end %>
+  <% if on_last_page?(@page_num, @last_page_num) %>
+    <a href="/movies?page=<%= @page_num + 1 %>">Next</a>
+  <% end %>
+</div>

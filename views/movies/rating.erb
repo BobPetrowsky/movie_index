@@ -1,0 +1,16 @@
+<div class="movie_list">
+  <ul>
+
+    <% @movies.each do |movie| %>
+
+      <li>
+        <a href="<%= "/movies/#{movie[:id]}" %>">
+          <span>Movie:</span> <%= movie[:title] %>
+          <span>Bob's Rating:</span> <%= movie[:rating] %>
+        </a>
+      </li>
+
+    <% end %>
+
+  </ul>
+</div>
